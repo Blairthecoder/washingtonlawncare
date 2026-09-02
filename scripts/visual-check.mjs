@@ -32,6 +32,12 @@ for (const [name, route, viewport] of checks) {
       window.scrollTo(0, y);
       await delay(35);
     }
+    await Promise.all(Array.from(document.images).map(img => img.complete
+      ? Promise.resolve()
+      : new Promise(resolve => {
+          img.addEventListener('load', resolve, { once: true });
+          img.addEventListener('error', resolve, { once: true });
+        })));
     window.scrollTo(0, 0);
   });
   await page.waitForTimeout(900);

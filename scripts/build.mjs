@@ -1,9 +1,15 @@
-import { cp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 
 const root = process.cwd();
 const dist = path.join(root, 'dist');
 const src = path.join(root, 'src');
+const assetVersion = createHash('sha256')
+  .update(await readFile(path.join(src, 'styles.css')))
+  .update(await readFile(path.join(src, 'site.js')))
+  .digest('hex')
+  .slice(0, 10);
 const phoneDisplay = '(337) 564-9037';
 const phoneHref = 'tel:+13375649037';
 const facebook = 'https://www.facebook.com/profile.php?id=100094370396482';
@@ -168,9 +174,9 @@ function layout({ title, description, pathName = '/', active = '', content, sche
   <meta property="og:image" content="${siteUrl}/assets/images/hero-lawn.webp">
   <link rel="icon" href="/assets/images/logo.webp" type="image/webp">
   <script>document.documentElement.classList.add('js')</script>
-  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/styles.css?v=${assetVersion}">
   <script type="application/ld+json">${schema}</script>
-  <script src="/assets/site.js" defer></script>
+  <script src="/assets/site.js?v=${assetVersion}" defer></script>
 </head>
 <body>
   ${header(active)}

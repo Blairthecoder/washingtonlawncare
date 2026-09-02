@@ -132,12 +132,13 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
 .area-links a:nth-child(odd) { border-right: 1px solid rgba(255,255,255,.25); }
 .area-links a:hover { color: var(--lime); padding-left: .9rem; }
 
-.page-hero { position: relative; padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(3rem, 5vw, 4rem); background: var(--green-dark); color: white; overflow: hidden; }
+.page-hero { position: relative; padding: 1.75rem 0 2rem; background: var(--green-dark); color: white; overflow: hidden; }
 .page-hero .wrap { position: relative; z-index: 2; }
-.page-hero h1 { max-width: 940px; font-size: clamp(2.75rem, 5.4vw, 5.2rem); }
-.page-hero p { max-width: 720px; margin: .9rem 0 0; color: rgba(255,255,255,.82); font-size: 1.08rem; }
-.page-hero-actions { margin-top: 1.5rem; }
-.breadcrumb { margin-bottom: 1.25rem; font-size: .78rem; font-weight: 800; letter-spacing: .04em; color: var(--lime); }
+.page-hero h1 { max-width: 900px; font-size: clamp(2.2rem, 3.8vw, 3.75rem); line-height: 1; }
+.page-hero p { max-width: 720px; margin: .65rem 0 0; color: rgba(255,255,255,.82); font-size: 1rem; line-height: 1.45; }
+.page-hero-actions { margin-top: 1rem; gap: .75rem; }
+.page-hero-actions .button { min-height: 42px; padding: .58rem 1rem; font-size: .84rem; }
+.breadcrumb { margin-bottom: .7rem; font-size: .72rem; font-weight: 800; letter-spacing: .04em; color: var(--lime); }
 .breadcrumb a { color: white; }
 
 .detail-grid { display: grid; grid-template-columns: 1.2fr .55fr; gap: clamp(2rem, 7vw, 6rem); }
@@ -225,8 +226,10 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.08; }
   .hero { min-height: 520px; }
   .hero-content { padding: 3.25rem 0 3rem; }
   .hero h1 { font-size: clamp(2.65rem, 13vw, 4.15rem); }
-  .page-hero { padding: 2.5rem 0 2.75rem; }
-  .page-hero h1 { font-size: clamp(2.4rem, 12vw, 3.55rem); }
+  .page-hero { padding: 1.4rem 0 1.6rem; }
+  .page-hero h1 { font-size: clamp(2.05rem, 10vw, 2.8rem); }
+  .page-hero p { margin-top: .55rem; font-size: .96rem; }
+  .page-hero-actions { margin-top: .85rem; gap: .55rem; }
   .page-hero .hero-actions .button { width: 100%; }
   .hero-actions .button { width: 100%; }
   .service-card:nth-child(n) { grid-column: 1 / -1; min-height: 390px; }

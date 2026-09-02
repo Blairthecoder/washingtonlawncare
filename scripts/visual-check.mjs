@@ -15,6 +15,8 @@ const browser = await chromium.launch({
 const checks = [
   ['home-desktop', '/', { width: 1440, height: 1000 }],
   ['home-mobile', '/', { width: 390, height: 844 }],
+  ['services-desktop', '/services/', { width: 1440, height: 1000 }],
+  ['services-mobile', '/services/', { width: 390, height: 844 }],
   ['service-desktop', '/services/lawn-care/', { width: 1440, height: 1000 }],
   ['area-mobile', '/areas/lake-charles/', { width: 390, height: 844 }],
   ['contact-mobile', '/contact/', { width: 390, height: 844 }]

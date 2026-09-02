@@ -1,0 +1,11 @@
+{
+  "name": "washington-lawn-care-service",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "images": "node scripts/process-images.mjs",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-site.mjs"
+  }
+}

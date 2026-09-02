@@ -7,7 +7,7 @@ const src = path.join(root, 'src');
 const phoneDisplay = '(337) 564-9037';
 const phoneHref = 'tel:+13375649037';
 const facebook = 'https://www.facebook.com/profile.php?id=100094370396482';
-const siteUrl = (process.env.URL || 'https://washington-lawn-care-service.netlify.app').replace(/\/$/, '');
+const siteUrl = (process.env.URL || 'https://washington-lawncare-la.netlify.app').replace(/\/$/, '');
 
 const services = [
   {

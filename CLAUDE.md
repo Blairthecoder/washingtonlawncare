@@ -1,0 +1,39 @@
+# Repository change policy
+
+This file applies to any AI coding agent working in this repository (Claude
+Code, Codex, or otherwise). Follow it for every task unless the user
+explicitly overrides a specific rule in their request.
+
+This repo's default branch is `master` (not `main`) — use `master` wherever
+this file says "main branch."
+
+- Begin every task from a clean branch based on current `origin/master`.
+  Never continue work on a stale local branch or an old checkout that
+  predates this policy.
+- Edit only files explicitly named or clearly required by the prompt. Do not
+  perform drive-by cleanup, renames, or "while I'm in here" fixes on files
+  outside the task's scope.
+- If another file appears necessary, stop and request approval before
+  editing it.
+- Never modify `netlify.toml`, `package.json`, GitHub configuration, or
+  build/check scripts under `scripts/` unless explicitly requested.
+- Never edit or commit `dist/`; it is generated build output (gitignored).
+- Run `npm run build` and `npm run check` before finishing.
+- Before committing, run `git diff --name-only origin/master...HEAD` and
+  confirm every changed file is explained by the task. If a file you didn't
+  intend to touch shows up (e.g. because it was already dirty in the
+  working tree from a prior session), stop and report it instead of
+  committing it.
+- If your working tree already has unrelated local or uncommitted changes
+  when a task starts, do not fold them into your commit. Report what you
+  found and ask how to handle it before writing any new commits.
+- Commit and push only the current feature branch.
+- Never push directly to `master`.
+- Never run `netlify deploy --prod`. Use a GitHub pull request and its
+  Netlify Deploy Preview instead, and merge only after the user gives
+  explicit go-ahead in chat.
+- If you discover that `master` has moved (new commits you didn't expect)
+  since you branched, stop before merging or force-pushing. Diff your
+  branch against the new `origin/master` and report what's actually
+  different before reconciling — another agent or session may have already
+  covered the same ground.
